@@ -5,8 +5,9 @@ import ImageDrop from './components/ImageDrop/ImageDrop';
 function App() {
   return (
     <div className="App">
-      <div className="Container"></div>
+      <div className="Container">
       <ImageDrop />
+      </div>
     </div>
   );
 }
