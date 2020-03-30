@@ -13,8 +13,7 @@ const DropWrapper = styled('div')({
   justifyContent: 'center',
   position: 'relative',
   width: '50%',
-  height: '200px',
-  borderStyle: 'dashed'
+  height: '200px'
 });
 
 interface Props {
@@ -27,17 +26,12 @@ const ImageDrop = (props: Props) => {
   const [dragging, setDragging] = useState(false);
   let dragCounter: number = 0;
 
-  useEffect(() => {
-    const div = dropRef.current;
-    if (div == null) {
-      throw new Error('');
-    }
-  });
 
   const handleDrag = (e: React.DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
   };
+
   const handleDragIn = (e: React.DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
@@ -46,6 +40,7 @@ const ImageDrop = (props: Props) => {
       setDragging(true);
     }
   };
+
   const handleDragOut = (e: React.DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
@@ -54,6 +49,7 @@ const ImageDrop = (props: Props) => {
       setDragging(false);
     }
   };
+  
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
